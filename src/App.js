@@ -13,6 +13,7 @@ import MyChart from "./components/MyChart";
 import Carusel from "./components/Carusel";
 import { Container, Col, Row } from 'reactstrap';
 import Daily from "./components/dailyTasks"
+import Welcome from "./components/Welcome"
 
 function App() {
   const [arrayOfNums, changeArrOfNums] = useState([0.1]);
@@ -40,12 +41,7 @@ function App() {
                     <MyChart arrayOfNums={arrayOfNums} />
                   </Route>
                     <Route path="/">
-                      <TitleBox>
-                        <Title>
-                          O APLIKACJI
-                        </Title>
-                      </TitleBox>
-                      <Arrow />
+                      <Welcome />
                   </Route>
                 </Switch>
               </GreyBox>
