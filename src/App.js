@@ -8,10 +8,9 @@ import {
 } from "react-router-dom";
 import TensComp from "./components/aimodel"
 import Nav from "./components/Nav"
-
 import CameraComponent from "./components/CameraComponent"
 import MyChart from "./components/MyChart";
-
+import Carusel from "./components/Carusel";
 
 function App() {
 
@@ -45,6 +44,7 @@ function App() {
               arrOfNums={arrayOfNums}
             />
             <CameraComponent position={position} />
+            <Carusel />
           </SubContainer>
         </Block>
       </div>
