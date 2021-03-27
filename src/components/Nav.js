@@ -14,14 +14,20 @@ export default () => {
 
     return (
         <>
-            <Top><Title ><Text>MENU</Text></Title ><Icon /><Text2>Popraw Swoją Postawę</Text2></Top>
+            <Top>
+                <Title>
+                    <Text>MENU</Text>
+                </Title>
+                <Icon />
+                <Text2>Popraw Swoją Postawę</Text2>
+            </Top>
             <Nav>
                 <NavLink to="/">WELC1OME</NavLink>
                 <NavLink to="/about">ABOUT US</NavLink>
                 <NavLink to="/posture">CHECK YOUR POSTURE</NavLink>
-                <NavLink2 to="/postawa">Wykrywanie Postawy</NavLink2>
-                <NavLink2 to="/postawa">Dane i Wykresy</NavLink2>
-                <NavLink to="/settings">SETTINGS</NavLink>
+                {/* <NavLink2 to="/postawa">Wykrywanie Postawy</NavLink2> */}
+                {/* <NavLink2 to="/postawa">Dane i Wykresy</NavLink2> */}
+                {/* <NavLink to="/settings">SETTINGS</NavLink> */}
             </Nav>
         </>
     );
