@@ -14,6 +14,7 @@ import Carusel from "./components/Carusel";
 import { Container, Col, Row } from 'reactstrap';
 import Daily from "./components/dailyTasks"
 import Welcome from "./components/Welcome"
+import AboutUs from "./components/AboutUs"
 
 function App() {
   const [arrayOfNums, changeArrOfNums] = useState([0.1]);
@@ -29,7 +30,7 @@ function App() {
               <GreyBox>
                 <Switch>
                   <Route path="/about">
-                    <Daily />
+                    <AboutUs />
                   </Route>
                   <Route path="/posture">
                     <TitleBox>

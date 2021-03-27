@@ -44,6 +44,7 @@ padding:5px;
 text-align:center;
 /* width:90%; */
 margin:30px;
+font-size:2em;
 
 `
 
