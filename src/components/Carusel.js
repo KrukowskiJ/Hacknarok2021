@@ -60,7 +60,8 @@ export default () => {
 }
 
 const CaruselBox = styled.div`
-        margin:40px;
+             margin-left:10%;
+        margin-right:10%;
     `
 
 const settings = {
