@@ -56,6 +56,11 @@ function App() {
     </Router>
   </>);
 }
+
+const SubContainer = styled.div`
+width:50%;
+`
+
 const Block = styled.div`
     margin-left: 350px;
     `
