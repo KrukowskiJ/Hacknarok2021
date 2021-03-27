@@ -7,7 +7,7 @@ export default () => {
     return (<>
 
         <Title>Daily Tasks</Title>
-        <Task done={done[0]} onClick={() => setDone({ ...done, 0: !done[0] })}><OK></OK>Zrób 10 przysiadów  </Task>
+        <Task done={done[0]} onClick={() => setDone({ ...done, 0: !done[0] })}>Zrób 10 przysiadów  </Task>
         <Task done={done[1]} onClick={() => setDone({ ...done, 1: !done[1] })}>Zrób 10 przysiadów  </Task>
         <Task done={done[2]} onClick={() => setDone({ ...done, 2: !done[2] })}>Zrób 10 przysiadów  </Task>
         <Task done={done[3]} onClick={() => setDone({ ...done, 3: !done[3] })}>Zrób 10 przysiadów  </Task>
