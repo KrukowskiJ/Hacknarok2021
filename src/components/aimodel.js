@@ -6,7 +6,7 @@
 let numOfFrames = 0;
 let numOfGoodFrames = 0;
 let initFlag = false;
-export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
+export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums, createNotification, unlockNotification }) => {
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
@@ -76,6 +76,8 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
         else {
             if (typeof alertGoodFn == "function")
                 alertGoodFn();
+                unlockNotification();
+
         }
 
         // finally draw the poses
@@ -86,7 +88,7 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
         // console.log("bad")
         if (typeof alertBadFn == "function")
             alertBadFn();
-
+            createNotification();
     }
 
 
