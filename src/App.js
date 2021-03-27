@@ -30,7 +30,7 @@ function App() {
               <GreyBox>
                 <Switch>
                   <Route path="/about">
-                    <AboutUs />
+                    <AboutUs/>
                   </Route>
                   <Route path="/posture">
                     <TitleBox>
