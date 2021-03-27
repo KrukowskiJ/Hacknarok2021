@@ -10,6 +10,7 @@ import TensComp from "./components/aimodel"
 import Nav from "./components/Nav"
 
 import CameraComponent from "./components/CameraComponent"
+import MyChart from "./components/MyChart";
 
 
 function App() {
@@ -25,9 +26,9 @@ function App() {
         <Block>
           <Switch>
             <Route path="/about">
-              <TensComp />
+              {/* <TensComp /> */}
             </Route>
-            <Route path="/users">
+            <Route path="/posture">
               <TensComp />
             </Route>
             <Route path="/">
@@ -39,6 +40,7 @@ function App() {
               />
               {console.log(arrayOfNums)}
               <CameraComponent position={position} />
+              <MyChart />
             </Route>
           </Switch>
         </Block>

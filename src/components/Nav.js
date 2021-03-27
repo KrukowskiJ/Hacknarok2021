@@ -7,42 +7,53 @@ import {
     Link
 } from "react-router-dom";
 
+const NavLink = styled(Link)`
+text-align:center;
+height: 20%;
+  text-decoration: none;
+  color: #9DC54A;
+  display: block;
+  white-space: nowrap;
+  font-size: 1.5vmax;
+
+  :hover{
+      color: white;
+      background-color:#676767;
+  }
+`
 
 export default () => {
 
     return (
-        <><Title />
+        <><Title >MENU</Title >
             <Nav>
-                <ul>
-                    <li>
-                        <Link to="/">Ho3me</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/users">Users</Link>
-                    </li>
-                </ul>
+
+                <NavLink to="/">WELCOME</NavLink>
+                <NavLink to="/about">ABOUT US</NavLink>
+                <NavLink to="/posture">CHECK YOUR POSTURE</NavLink>
             </Nav>
         </>
     );
 }
 const Title = styled.div`
+    font-size: 1.75vmax;
+    text-align: center;
     background: #9DC54A;
-    top:10;
+    color: #FFFFFF;
     position: absolute;
     z-index: 10;
     height: 10vh;
-    width:20%;
+    width:20vw;
     `
 const Nav = styled.div`
-    background: #9DC54A;
-    background: linear-gradient(173deg, rgba(83,9,22,1) 0%, rgba(173,34,33,1) 45%, rgba(254,68,83,1) 100%);
-    top:0;
+    background: #545454;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     margin-top: 10vh;
     height: 90vh;
-    width:20%;
+    width:20vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
     `
