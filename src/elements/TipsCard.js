@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'reactstrap';
 export default (props)=>{
 
     const Box = styled.div`
-        border: 5px solid #EBEBEB;
+        border: 5px solid #8D8D8D;
         border-radius: 25px;
         opacity: 1;
         padding:20px;
@@ -17,7 +17,7 @@ export default (props)=>{
         font: normal normal bold 19px/24px Microsoft YaHei UI;
         letter-spacing: 0px;
         margin:auto;
-        color: #BFBFBF;
+        color: #8D8D8D;
         opacity: 1;
         margin-left:0px;
     `
@@ -29,7 +29,7 @@ export default (props)=>{
         text-align: left;
         font: normal normal bold 19px/24px Microsoft YaHei UI;
         margin:auto;
-        color: #BFBFBF;
+        color: #8D8D8D;
         opacity: 1;
         margin-bottom:10px;
     `
