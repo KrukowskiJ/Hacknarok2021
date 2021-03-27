@@ -21,9 +21,9 @@ function App() {
         <Block>
           <Switch>
             <Route path="/about">
-              <TensComp />
+              {/* <TensComp /> */}
             </Route>
-            <Route path="/users">
+            <Route path="/posture">
               <TensComp />
             </Route>
             <Route path="/">
