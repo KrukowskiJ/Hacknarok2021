@@ -18,7 +18,7 @@ export default ({ position }) => {
 
 const ContainerBox = styled.div`
     margin:auto;
-    width:60%;
+    width:80%;
 `
 
 
