@@ -34,15 +34,15 @@ justify-content: flex-start;
 const Title = styled.div`
     background: #9DC54A;
     position: absolute;
-    height:10vh;
-    width:20vw;
+    height:100px;
+    width:350px;
     `
 const Text = styled.div`
-    margin-top:10px;
+    margin-top:20px;
     text-align: center;
     color: #FFFFFF;
     font-family: Roboto;
-    font-size: 2.75vmax;
+    font-size: 45px;
     `
 const Icon = styled.div`
 font-size: 1.75vmax;
@@ -50,9 +50,9 @@ text-align: center;
 background: #577812;
 color: #FFFFFF;
 position: absolute;
-height: 10vh;
-width:10vw;
-margin-left:20vw;
+height:100px;
+width:100px;
+margin-left:350px;
     `
 
 const Title2 = styled.div`
@@ -61,27 +61,27 @@ const Title2 = styled.div`
     background: #6A980C;
     color: #FFFFFF;
     position: absolute;
-    height: 10vh;
-    width:70vw;
-    margin-left:30vw;
+    height:100px;
+    width:72vw;
+    margin-left:450px;
     `
 const Nav = styled.div`
-margin-top:10vh;
+margin-top:100px;
     background: #545454;
     position: absolute;
     height: 100vh;
-    width:20vw;
+    width:350px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     `
 const NavLink = styled(Link)`
-    padding: 20px;
+    padding: 40px;
     text-align:center;
       text-decoration: none;
       color: #9DC54A;
       display: block;
-      font-size: 1.5vmax;
+      font-size: 20px;
       font-family: Roboto;
       :hover{
           color: white;
@@ -95,8 +95,8 @@ display: block;
   text-decoration: none;
   background-color: #3A3A3A;
   color: #9DC54A;
-  font-size: 1.5vmax;
-padding: 20px;
+  font-size: 15px;
+padding: 30px;
   :hover{
       color: white;
       
