@@ -5,7 +5,7 @@
 
 let numOfFrames = 0;
 let numOfGoodFrames = 0;
-export default ({ alertBadFn }) => {
+export default ({ alertBadFn, alertGoodFn }) => {
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
@@ -36,13 +36,13 @@ export default ({ alertBadFn }) => {
         window.requestAnimationFrame(loop);
 
         // append/get elements to the DOM
-        const canvas = document.getElementById("canvas");
-        canvas.width = size; canvas.height = size;
-        ctx = canvas.getContext("2d");
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
+        // const canvas = document.getElementById("canvas");
+        // canvas.width = size; canvas.height = size;
+        // ctx = canvas.getContext("2d");
+        // labelContainer = document.getElementById("label-container");
+        // for (let i = 0; i < maxPredictions; i++) { // and class labels
+        //     labelContainer.appendChild(document.createElement("div"));
+        // }
     }
 
     async function loop(timestamp) {
@@ -58,27 +58,30 @@ export default ({ alertBadFn }) => {
         // Prediction 2: run input through teachable machine classification model
         const prediction = await model.predict(posenetOutput);
 
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
+        // for (let i = 0; i < maxPredictions; i++) {
+        //     const classPrediction =
+        //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        //     labelContainer.childNodes[i].innerHTML = classPrediction;
+        // }
 
         // console.log(prediction[0].probability > 0.8)
 
         CountFrames(prediction[0].probability > 0.8)
 
-        if (prediction[0].probability < 0.8)
-            alertAbout()
+        if (prediction[0].probability < 0.8) { alertAbout() }
+        else {
+            alertGoodFn();
+        }
 
         // finally draw the poses
-        drawPose(pose);
+        // drawPose(pose);
     }
 
     const alertAbout = () => {
         console.log("bad")
         if (typeof alertBadFn == "function")
             alertBadFn();
+
     }
 
 
@@ -115,8 +118,7 @@ export default ({ alertBadFn }) => {
 
     init();
     return (<>
-        <div>Teachable Machine Pose Model</div>
-        <div><canvas id="canvas"></canvas></div>
-        <div id="label-container"></div>
+        {/* <div><canvas id="canvas"></canvas></div>
+        <div id="label-container"></div> */}
     </>)
 }

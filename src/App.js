@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,11 +9,14 @@ import {
 import TensComp from "./components/aimodel"
 import Nav from "./components/Nav"
 
+import CameraComponent from "./components/CameraComponent"
 
 
 function App() {
-  return (<>
 
+  const [position, changePosistion] = useState(true);
+
+  return (<>
 
     <Router>
       <div>
@@ -27,7 +30,11 @@ function App() {
               <TensComp />
             </Route>
             <Route path="/">
-              <TensComp />
+              <TensComp
+                alertBadFn={() => changePosistion(false)}
+                alertGoodFn={() => changePosistion(true)}
+              />
+              <CameraComponent position={position}/>
             </Route>
           </Switch>
         </Block>
