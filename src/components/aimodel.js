@@ -3,8 +3,9 @@
 // import modelUrl from "../model/model.json"  
 // import metadataUrl from "../model/metadata.json"  
 
-
-export default () => {
+let numOfFrames = 0;
+let numOfGoodFrames = 0;
+export default ({ alertBadFn }) => {
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
@@ -62,11 +63,43 @@ export default () => {
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
-        console.log(prediction[0].probability > 0.8)
+
+        // console.log(prediction[0].probability > 0.8)
+
+        CountFrames(prediction[0].probability > 0.8)
+
+        if (prediction[0].probability < 0.8)
+            alertAbout()
 
         // finally draw the poses
         drawPose(pose);
     }
+
+    const alertAbout = () => {
+        console.log("bad")
+        if (typeof alertBadFn == "function")
+            alertBadFn();
+    }
+
+
+    const CountFrames = (isStriaight) => {
+        numOfFrames++
+        if (isStriaight)
+            numOfGoodFrames++
+        if (numOfFrames == (500 / 24))
+            calculate()
+    }
+
+    const calculate = () => {
+        console.log("calculate!")
+        console.log(new Date().getTime())
+        console.log(numOfGoodFrames / numOfFrames)
+
+        numOfFrames = 0;
+        numOfGoodFrames = 0;
+    }
+
+
 
     function drawPose(pose) {
         if (webcam.canvas) {
