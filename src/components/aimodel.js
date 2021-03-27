@@ -70,7 +70,8 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
 
         if (prediction[0].probability < 0.8) { alertAbout() }
         else {
-            alertGoodFn();
+            if (typeof alertGoodFn == "function")
+                alertGoodFn();
         }
 
         // finally draw the poses
@@ -94,9 +95,9 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
     }
 
     const calculate = () => {
-        console.log("calculate!")
-        console.log(new Date().getTime())
-        console.log(numOfGoodFrames / numOfFrames)
+        // console.log("calculate!")
+        // console.log(new Date().getTime())
+        // console.log(numOfGoodFrames / numOfFrames)
 
 
         let currentArr = arrOfNums;
