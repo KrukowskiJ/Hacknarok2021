@@ -64,14 +64,16 @@ class MyChart extends React.Component {
             </Title>
 
             <ChartBox>
-                <Chart
-                    options={this.state.options}
-                    series={this.state.series}
-                    type="line"
-                    height="500px"
-                    width="100%"
-                    margin="0px"
-                />
+                <class id="chart">
+                    <Chart
+                        options={this.state.options}
+                        series={this.state.series}
+                        type="line"
+                        height="500px"
+                        width="100%"
+                        margin="0px"
+                    />
+                </class>
             </ChartBox>
             </>
         );
