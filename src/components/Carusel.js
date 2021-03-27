@@ -17,7 +17,7 @@ export default()=>{
             ]
         },
         {
-            title: "ZADBAJ O USTAWIENIE EKRANU:",
+            title: "12ZADBAJ O USTAWIENIE EKRANU:",
             tips:[
                 "Nie stawiaj monitora naprzeciw okna, ani na jego tle",
                 "Monitor powinien stać bokiem do okna, nie bliżej niż 1 metr",
@@ -26,7 +26,7 @@ export default()=>{
             ]
         },
         {
-            title: "ZADBAJ O USTAWIENIE EKRANU:",
+            title: "3213ZADBAJ O USTAWIENIE EKRANU:",
             tips:[
                 "Nie stawiaj monitora naprzeciw okna, ani na jego tle",
                 "Monitor powinien stać bokiem do okna, nie bliżej niż 1 metr",
@@ -35,7 +35,7 @@ export default()=>{
             ]
         },
         {
-            title: "ZADBAJ O USTAWIENIE EKRANU:",
+            title: "1231ZADBAJ O USTAWIENIE EKRANU:",
             tips:[
                 "Nie stawiaj monitora naprzeciw okna, ani na jego tle",
                 "Monitor powinien stać bokiem do okna, nie bliżej niż 1 metr",
@@ -65,7 +65,7 @@ export default()=>{
             <Slider {...settings}>
                 {
                     Tips.map(object=>{
-                        return <TipsCard text = {object.tips}/>
+                        return <TipsCard text = {object.tips} title={object.title}/>
                     })
                 }
             </Slider>
