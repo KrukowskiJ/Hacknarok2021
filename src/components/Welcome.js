@@ -18,14 +18,16 @@ export default () => {
             <DescriptionBox>
                 <DescriptionBoxTop>
                     <TitleTop>
-                        Po co mi to?
+                        Dlaczego mam tego używać?
                     </TitleTop>
                 </DescriptionBoxTop>
                 <DescriptionBoxBottom>
                     <DescriptionValue>
-                        Większość swojego czasu w pracy spędzamy w pozycji siedzącej. Co może mieć 
-                        bardzo złe skutki dla naszego zdrowia. Dlatego tak ważne jest utrzymanie 
-                        ergonomicznej pozycji ciała oraz regularne przerwy, urozmaicone ćwiczeniami fizycznymi.
+                            Niestety - Prawdziwa Teraźniejszość - jest taka, że spędzamy dziś większość czasu przy komputerze -
+                            czy to w trakcie pracy, czy po godzinach. I chociaż wszyscy powinniśmy wiedzieć jak siedzieć -
+                            prosto, w ergonomicznej pozycji, tak każdy nawet podświadomie się przekręca do innych mniej
+                            korzystnych dla naszego kręgosłupa pozycji.                             I dlatego tworzymy aplikację która - dzięki przyjemnym powiadomieniom, pomoże wejść w nawyk utrzymywania dobrej pozycji przed komputerem
+                            i poprawnie dbać o nasze plecy - tak żeby wieczorami nie bolały.
                     </DescriptionValue>
                     <BulletBox>
                         <BulletText>
@@ -55,6 +57,7 @@ export default () => {
 
 const LogoBox = styled.div`
     margin:10%;
+    margin-bottom:25px;
 `
 
 const LogoImg = styled.img`
@@ -65,7 +68,7 @@ const LogoImg = styled.img`
 `
 
 const DescriptionBox = styled.div`
-    margin-top:10%;
+    margin-top:5%;
     margin-right:10%;
     margin-left:10%;
 `
