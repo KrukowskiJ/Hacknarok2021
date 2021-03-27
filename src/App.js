@@ -19,8 +19,7 @@ function App() {
 
   return (<>
     <Router>
-      <Container fluid>
-
+      <Container fluid style={{margin:0, padding:0}} >
         <Nav />
         <Block>
           <Row>
