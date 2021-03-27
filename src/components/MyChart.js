@@ -9,15 +9,15 @@ let arrayOfNums;
 
 function appendData() {
     let newValue;
-    if(arrayOfNums == null || arrayOfNums[arrayOfNums.length - 1] == null){
+    if (arrayOfNums == null || arrayOfNums[arrayOfNums.length - 1] == null) {
         newValue = 0
         // console.log("I got null, new value: " + newValue)
     } else {
-        newValue = parseInt( arrayOfNums[arrayOfNums.length - 1] * 100)
+        newValue = parseInt(arrayOfNums[arrayOfNums.length - 1] * 100)
         // console.log("I didn't got null, new value: " + newValue)
     }
 
-    const time =  int++
+    const time = int++
     // console.log(time)
 
     if (data.length >= 10) {
@@ -59,22 +59,22 @@ class MyChart extends React.Component {
     render() {
         return (
             <>
-            <Title>
-                WYKRES POSTURY
-            </Title>
+                <Title>
+                    WYKRES POSTURY
+                </Title>
 
-            <ChartBox>
-                <class id="chart">
-                    <Chart
-                        options={this.state.options}
-                        series={this.state.series}
-                        type="line"
-                        height="500px"
-                        width="100%"
-                        margin="0px"
-                    />
-                </class>
-            </ChartBox>
+                <ChartBox>
+                    <class id="chart">
+                        <Chart
+                            options={this.state.options}
+                            series={this.state.series}
+                            type="line"
+                            height="500px"
+                            width="100%"
+                            margin="0px"
+                        />
+                    </class>
+                </ChartBox>
             </>
         );
     }
@@ -90,6 +90,7 @@ const Title = styled.h3`
     opacity: 1; 
     margin:10%;
     margin-top:5%;
+    margin-bottom:0px;
     font-size: 2rem;
     padding-bottom:20px;
     border-bottom: 4px solid #7C7C7C ;
