@@ -1,138 +1,38 @@
 import React from 'react';
-import Notification  from 'react-web-notification';
 
+import sound from "../sound/example_sound.mp3"
 
 let notificationLock = false;
 
-
-export default class MyNotification extends React.Component {
-
+export default ({ position }) => {
 
 
-    constructor(props) {
-        super(props);
-        this.position = props.position;
-        this.state = {
-            ignore: true,
-            title: ''
-        };
-        this.setState({...this.state, position: props.position})
+    const sendNotif = () => {
+        console.log("sendNotif")
+        var notification = new Notification("Wyprostuj się!", { tag: "Wyprostuj się!" });
+        const audio = new Audio(sound);
+        audio.play();
     }
 
-    handlePermissionGranted(){
-        console.log('Permission Granted');
-        this.setState({
-            ignore: false
-        });
-    }
-    handlePermissionDenied(){
-        console.log('Permission Denied');
-        this.setState({
-            ignore: true
-        });
-    }
-    handleNotSupported(){
-        console.log('Web Notification not Supported');
-        this.setState({
-            ignore: true
-        });
-    }
+    window.Notification.requestPermission().then(function (result) {
+        console.log(result);
+    });
 
-    handleNotificationOnClick(e, tag){
-        console.log(e, 'Notification clicked tag:' + tag);
-    }
 
-    handleNotificationOnError(e, tag){
-        console.log(e, 'Notification error tag:' + tag);
-    }
+    if (!position) {
+        console.log(position)
+        if (!notificationLock) {
+            notificationLock = true;
+            sendNotif();
+            setTimeout(() => {
+                notificationLock = false;
 
-    handleNotificationOnClose(e, tag){
-        console.log(e, 'Notification closed tag:' + tag);
-    }
-
-    handleNotificationOnShow(e, tag){
-        this.playSound();
-        console.log(e, 'Notification shown tag:' + tag);
-    }
-
-    playSound(filename){
-        document.getElementById('sound').play();
-    }
-
-    showNotification() {
-
-        if(this.state.ignore) {
-            return;
+            }, 5000)
         }
-
-        const now = Date.now();
-
-        const title = 'React-Web-Notification' + now;
-        const body = 'Hello' + new Date();
-        const tag = now;
-        const icon = 'http://mobilusoss.github.io/react-web-notification/example/Notifications_button_24.png';
-        // const icon = 'http://localhost:3000/Notifications_button_24.png';
-
-        // Available options
-        // See https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
-        const options = {
-            tag: tag,
-            body: body,
-            icon: icon,
-            lang: 'en',
-            dir: 'ltr',
-            sound: './sound.mp3'  // no browsers supported https://developer.mozilla.org/en/docs/Web/API/notification/sound#Browser_compatibility
-        }
-        this.setState({
-            title: title,
-            options: options
-        });
     }
 
-    handleButtonClick2() {
-        this.props.swRegistration.getNotifications({}).then(function(notifications) {
-            console.log(notifications);
-        });
-    }
+    return (<>
 
-    render() {
-        console.log("Position value: " + this.position + " lock value: " + notificationLock)
+    </>)
 
-        if(this.state.position && notificationLock){
-          this.showNotification()
-          notificationLock = false;
-          console.log("WYPROSTUJ SIE")
-        }
-
-        // // position is false => we are putting lock up
-        // if(!this.position) {
-        //     notificationLock = true;
-        //     console.log("Changing lock value")
-        // }
-
-        return (
-            <div>
-                {document.title === 'swExample' && <button onClick={this.handleButtonClick2.bind(this)}>swRegistration.getNotifications</button>}
-                <Notification
-                    ignore={this.state.ignore && this.state.title !== ''}
-                    notSupported={this.handleNotSupported.bind(this)}
-                    onPermissionGranted={this.handlePermissionGranted.bind(this)}
-                    onPermissionDenied={this.handlePermissionDenied.bind(this)}
-                    onShow={this.handleNotificationOnShow.bind(this)}
-                    onClick={this.handleNotificationOnClick.bind(this)}
-                    onClose={this.handleNotificationOnClose.bind(this)}
-                    onError={this.handleNotificationOnError.bind(this)}
-                    timeout={5000}
-                    title={this.state.title}
-                    options={this.state.options}
-                    swRegistration={this.props.swRegistration}
-                />
-                <audio id='sound' preload='auto'>
-                    <source src='./sound.mp3' type='audio/mpeg' />
-                    <source src='./sound.ogg' type='audio/ogg' />
-                    <embed hidden={true} autostart='false' loop={false} src='./sound.mp3' />
-                </audio>
-            </div>
-        )
-    }
-};
+}
