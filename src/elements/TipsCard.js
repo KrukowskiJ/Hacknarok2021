@@ -31,6 +31,7 @@ export default (props)=>{
         margin:auto;
         color: #BFBFBF;
         opacity: 1;
+        margin-bottom:10px;
     `
 
     const Bullet = styled.img`

@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts";
+import styled from "styled-components"
 
 let data = [];
 let int = 1;
@@ -57,21 +58,25 @@ class MyChart extends React.Component {
 
     render() {
         return (
-            <div id="chart">
+            <ChartBox>
                 <Chart
                     options={this.state.options}
                     series={this.state.series}
                     type="line"
-                    height="350"
-                    width="500"
+                    height="500px"
+                    width="100%"
+                    margin="0px"
                 />
-            </div>
+            </ChartBox>
         );
     }
 }
 
 export default MyChart;
 
+const ChartBox = styled.div`
+    padding:10%;
+`
 
 function getState() {
     return {
