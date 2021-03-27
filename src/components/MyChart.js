@@ -12,7 +12,7 @@ function appendData() {
         newValue = 0
         // console.log("I got null, new value: " + newValue)
     } else {
-        newValue = arrayOfNums[arrayOfNums.length - 1] * 100
+        newValue = parseInt( arrayOfNums[arrayOfNums.length - 1] * 100)
         // console.log("I didn't got null, new value: " + newValue)
     }
 
