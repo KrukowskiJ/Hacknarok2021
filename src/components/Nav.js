@@ -62,7 +62,7 @@ const Title2 = styled.div`
     color: #FFFFFF;
     position: absolute;
     height:100px;
-    width:72vw;
+    width:100%;
     margin-left:450px;
     `
 const Nav = styled.div`
