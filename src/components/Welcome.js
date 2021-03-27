@@ -27,6 +27,26 @@ export default () => {
                         bardzo złe skutki dla naszego zdrowia. Dlatego tak ważne jest utrzymanie 
                         ergonomicznej pozycji ciała oraz regularne przerwy, urozmaicone ćwiczeniami fizycznymi.
                     </DescriptionValue>
+                    <BulletBox>
+                        <BulletText>
+                             1. Siądź wygodnie przy biurku
+                        </BulletText>
+                    </BulletBox>
+                    <BulletBox>
+                        <BulletText>
+                             2. Skieruj kamerę na siebie
+                        </BulletText>
+                    </BulletBox>
+                    <BulletBox>
+                        <BulletText>
+                             3. W razie ostrzeżenia popraw pozycję ciała
+                        </BulletText>
+                    </BulletBox>
+                    <BulletBox>
+                        <BulletText>
+                             4. Podczas przerw wykonuj przygotowane zadania
+                        </BulletText>
+                    </BulletBox>
                 </DescriptionBoxBottom>
             </DescriptionBox>
         </>
@@ -99,9 +119,27 @@ const TitleTop = styled.h2`
 `
 
 const DescriptionValue=styled.h2`
-    text-align: left;
+    text-align: center;
     font: normal normal bold 26px/34px Roboto;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
+`
+
+const BulletBox=styled.div`
+    margin-top:20px;
+    background: #9DC54A 0% 0% no-repeat padding-box;
+    border-radius: 34px;
+    opacity: 1;
+    padding:20px;
+`
+
+const BulletText=styled.h2`
+    text-align: left;
+    font: normal normal bold 19px/25px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin:5px;
+    font-size:1.8rem;
 `
