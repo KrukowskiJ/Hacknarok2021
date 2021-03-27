@@ -26,19 +26,26 @@ function App() {
           <Row>
             <Col md="6">
               <GreyBox>
-                <TitleBox>
-                  <Title>
-                    DANE I WYKRESY
-                    </Title>
-
-                </TitleBox>
-                <Arrow />
                 <Switch>
                   <Route path="/about">
                     <Daily />
                   </Route>
                   <Route path="/posture">
+                    <TitleBox>
+                      <Title>
+                        DANE I WYKRESY
+                        </Title>
+                    </TitleBox>
+                    <Arrow />
                     <MyChart arrayOfNums={arrayOfNums} />
+                  </Route>
+                    <Route path="/">
+                      <TitleBox>
+                        <Title>
+                          O APLIKACJI
+                        </Title>
+                      </TitleBox>
+                      <Arrow />
                   </Route>
                 </Switch>
               </GreyBox>
