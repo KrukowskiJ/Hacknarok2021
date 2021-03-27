@@ -10,6 +10,7 @@ import TensComp from "./components/aimodel"
 import Nav from "./components/Nav"
 
 import CameraComponent from "./components/CameraComponent"
+import MyChart from "./components/MyChart";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                 alertGoodFn={() => changePosistion(true)}
               />
               <CameraComponent position={position}/>
+              <MyChart/>
             </Route>
           </Switch>
         </Block>
