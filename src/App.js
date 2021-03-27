@@ -11,43 +11,64 @@ import Nav from "./components/Nav"
 import CameraComponent from "./components/CameraComponent"
 import MyChart from "./components/MyChart";
 import Carusel from "./components/Carusel";
+import {Container,Col,Row} from 'reactstrap';
 
 function App() {
-
-  const [position, changePosistion] = useState(true);
   const [arrayOfNums, changeArrOfNums] = useState([0.1]);
+  const [position, changePosistion] = useState(true);
 
   return (<>
-
     <Router>
-      <div>
+      <Container fluid>
+
         <Nav />
         <Block>
-          <Switch>
-            <Route path="/about">
-              {/* <TensComp /> */}
-            </Route>
-            <Route path="/posture">
-              <TensComp />
-            </Route>
-            <Route path="/">
-              <TensComp
-                alertBadFn={() => changePosistion(false)}
-                alertGoodFn={() => changePosistion(true)}
-                changeArray={changeArrOfNums}
-                arrOfNums={arrayOfNums}
-              />
-              <CameraComponent position={position} />
-              <Carusel /> 
-              <MyChart arrayOfNums={arrayOfNums}/>       
-            </Route>
-          </Switch>
+          <Row>
+              <Col md="6">
+                <GreyBox>
+                  <Switch>
+                    <Route path="/about">
+                      {/* <TensComp /> */}
+                    </Route>
+                    <Route path="/posture">
+                      <TensComp />
+                      <MyChart arrayOfNums={arrayOfNums}/>  
+                    </Route>
+                  </Switch>
+                </GreyBox>
+              </Col>
+              <Col md="6">
+                <MasterBox>
+                  <TensComp
+                      alertBadFn={() => changePosistion(false)}
+                      alertGoodFn={() => changePosistion(true)}
+                      changeArray={changeArrOfNums}
+                      arrOfNums={arrayOfNums}
+                  />
+                  <CameraComponent position={position} />
+                  <Carusel />  
+                </MasterBox>
+              </Col>
+            </Row>
         </Block>
-      </div>
+
+      </Container>
     </Router>
   </>);
 }
 const Block = styled.div`
-    margin-left: 30%;
+    margin-left: 350px;
     `
+
+const GreyBox = styled.div`
+    background: #EBEBEB ;
+    height:100vh;
+    width:100%;
+    margin:0;
+`
+
+const MasterBox=styled.div`
+    margin-top:10%;
+
+`
 export default App;
