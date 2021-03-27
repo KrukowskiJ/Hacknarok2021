@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import TensComp from "./components/aimodel"
 import Nav from "./components/Nav"
@@ -61,6 +60,7 @@ function App() {
                 />
                 <CameraComponent position={position} />
                 <Carusel />
+                {console.log("App.js position = " + position)}
                 <MyNotification position={position}/>
               </MasterBox>
             </Col>

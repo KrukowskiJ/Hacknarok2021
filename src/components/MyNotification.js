@@ -16,6 +16,7 @@ export default class MyNotification extends React.Component {
             ignore: true,
             title: ''
         };
+        this.setState({...this.state, position: props.position})
     }
 
     handlePermissionGranted(){
@@ -97,7 +98,7 @@ export default class MyNotification extends React.Component {
     render() {
         console.log("Position value: " + this.position + " lock value: " + notificationLock)
 
-        if(this.position && notificationLock){
+        if(this.state.position && notificationLock){
           this.showNotification()
           notificationLock = false;
           console.log("WYPROSTUJ SIE")
