@@ -3,18 +3,21 @@ import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts";
 
 let data = [];
+let int = 1;
+let arrayOfNums;
 
 function appendData() {
     let newValue;
     if(arrayOfNums == null || arrayOfNums[arrayOfNums.length - 1] == null){
         newValue = 0
-        console.log("I got null, new value: " + newValue)
+        // console.log("I got null, new value: " + newValue)
     } else {
         newValue = arrayOfNums[arrayOfNums.length - 1] * 100
-        console.log("I didn't got null, new value: " + newValue)
+        // console.log("I didn't got null, new value: " + newValue)
     }
 
-    const time = parseInt(new Date().getTime() / 1000, 10);
+    const time =  int++
+    // console.log(time)
 
     if (data.length >= 10) {
         data = [...data.slice(1, 10), [time, newValue]];
@@ -25,7 +28,7 @@ function appendData() {
 }
 
 
-let arrayOfNums;
+
 
 class MyChart extends React.Component {
 
@@ -43,7 +46,7 @@ class MyChart extends React.Component {
     intervals() {
         window.setInterval(() => {
             appendData();
-            console.log("Current array of nums: " + arrayOfNums)
+            // console.log("Current array of nums: " + arrayOfNums)
             ApexCharts.exec("realtime", "updateSeries", [
                 {
                     data: data
@@ -73,6 +76,8 @@ export default MyChart;
 function getState() {
     return {
         options: {
+
+            colors: ['#9DC54A'],
             chart: {
                 id: "realtime",
                 animations: {
@@ -95,24 +100,22 @@ function getState() {
             },
 
             title: {
-                text: "Dynamic Updating Chart",
+                text: "Wykres Twojej postury:",
                 align: "left"
             },
             markers: {
                 size: 0
             },
-            xaxis: {},
+            xaxis: {
+                title: {
+                    text: "Czas"
+                }
+            },
             yaxis: [
                 {
                     title: {
-                        text: "rand1"
+                        text: "Czy byłeś wyprostowany? [%]"
                     }
-                },
-                {
-                    title: {
-                        text: "rand2"
-                    },
-                    opposite: true
                 }
             ],
             legend: {
