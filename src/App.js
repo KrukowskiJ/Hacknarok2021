@@ -42,12 +42,7 @@ function App() {
                     <MyChart arrayOfNums={arrayOfNums} />
                   </Route>
                   <Route path="/">
-                    <TitleBox>
-                      <Title>
-                        O APLIKACJI
-                      </Title>
-                    </TitleBox>
-                    <Arrow />
+                    <Welcome/>
                   </Route>
                 </Switch>
               </GreyBox>
