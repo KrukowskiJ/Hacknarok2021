@@ -1,27 +1,42 @@
 import styled from "styled-components"
-import React from "react"
+import React, { useState } from "react"
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
 } from "react-router-dom";
+import { Container, Col, Row } from 'reactstrap';
 
 
 
 export default () => {
 
+    const [hover, setHover] = useState(0);
+    const [hover2, setHover2] = useState(0);
+    function wypisz() {
+
+        console.log(hover);
+    }
 
     return (
         <>
-            <Top><Title ><Text>MENU</Text></Title ><Icon /><Text2>Popraw Swoją Postawę</Text2></Top>
+            <Top>
+                <Title>
+                    <Text>MENU</Text>
+                </Title>
+                <Icon />
+                <Text2>Popraw Swoją Postawę</Text2>
+            </Top>
             <Nav>
-                <NavLink to="/">WELC1OME</NavLink>
-                <NavLink to="/about">ABOUT US</NavLink>
-                <NavLink to="/posture">CHECK YOUR POSTURE</NavLink>
-                <NavLink2 to="/postawa">Wykrywanie Postawy</NavLink2>
-                <NavLink2 to="/postawa">Dane i Wykresy</NavLink2>
-                <NavLink to="/settings">SETTINGS</NavLink>
+                <NavLink to="/">WITAJ</NavLink>
+                <NavLink to="/posture">TWOJA POSTAWA</NavLink>
+                <NavLink to="/about">O NAS</NavLink>
+                {/* <Row><NavLink2 onMouseEnter={() => setHover(!hover)}
+                    onMouseLeave={() => setHover(!hover)}
+
+                    to="/postawa">Wykrywanie Postawy</NavLink2>{hover ? <Arrow /> : null}
+                </Row> */}
             </Nav>
         </>
     );
@@ -31,6 +46,16 @@ background: #6A980C;
 height:100px;
 width:100%;
 display: flex;
+    `
+
+const Arrow = styled.div`
+float: right;
+width: 0; 
+  height: 0; 
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent; 
+  
+  border-right:20px solid white; 
     `
 const Title = styled.div`
     background: #9DC54A;
@@ -73,6 +98,7 @@ const Nav = styled.div`
     flex-direction: column;
     `
 const NavLink = styled(Link)`
+width: 100%;
     padding: 40px;
     text-align:center;
       text-decoration: none;
@@ -84,9 +110,14 @@ const NavLink = styled(Link)`
           color: white;
           background-color:#676767;
           text-decoration: none;
+          border: 16px solid #9DC54A;
+          border-top: none;
+          border-bottom: none;
+          border-right: none;
       }
     `
 const NavLink2 = styled(Link)`
+display: flex;
 font-family: Roboto;
 display: block;
     text-align:center;

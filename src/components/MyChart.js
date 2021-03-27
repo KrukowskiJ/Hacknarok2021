@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts";
+import styled from "styled-components"
 
 let data = [];
 let int = 1;
@@ -8,15 +9,15 @@ let arrayOfNums;
 
 function appendData() {
     let newValue;
-    if(arrayOfNums == null || arrayOfNums[arrayOfNums.length - 1] == null){
+    if (arrayOfNums == null || arrayOfNums[arrayOfNums.length - 1] == null) {
         newValue = 0
         // console.log("I got null, new value: " + newValue)
     } else {
-        newValue = parseInt( arrayOfNums[arrayOfNums.length - 1] * 100)
+        newValue = parseInt(arrayOfNums[arrayOfNums.length - 1] * 100)
         // console.log("I didn't got null, new value: " + newValue)
     }
 
-    const time =  int++
+    const time = int++
     // console.log(time)
 
     if (data.length >= 10) {
@@ -57,21 +58,48 @@ class MyChart extends React.Component {
 
     render() {
         return (
-            <div id="chart">
-                <Chart
-                    options={this.state.options}
-                    series={this.state.series}
-                    type="line"
-                    height="350"
-                    width="500"
-                />
-            </div>
+            <>
+                <Title>
+                    WYKRES POSTURY
+                </Title>
+
+                <ChartBox>
+                    <class id="chart">
+                        <Chart
+                            options={this.state.options}
+                            series={this.state.series}
+                            type="line"
+                            height="500px"
+                            width="100%"
+                            margin="0px"
+                        />
+                    </class>
+                </ChartBox>
+            </>
         );
     }
 }
 
 export default MyChart;
 
+const Title = styled.h3`
+    text-align: left;
+    font: normal normal bold 16px/20px Microsoft YaHei UI;
+    letter-spacing: 0px;
+    color: #676767;
+    opacity: 1; 
+    margin:10%;
+    margin-top:5%;
+    margin-bottom:0px;
+    font-size: 2rem;
+    padding-bottom:20px;
+    border-bottom: 4px solid #7C7C7C ;
+`
+
+const ChartBox = styled.div`
+    padding:10%;
+    padding-top:0px;
+`
 
 function getState() {
     return {
@@ -100,8 +128,8 @@ function getState() {
             },
 
             title: {
-                text: "Wykres Twojej postury:",
-                align: "left"
+                align: "left",
+                size: "2px"
             },
             markers: {
                 size: 0

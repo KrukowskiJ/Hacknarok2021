@@ -7,19 +7,18 @@ import styled from "styled-components"
 export default ({ position }) => {
 
 
-    return (<Container >
+    return (<ContainerBox >
         <CamStyled audio={false} width={540} positioncolor={position} />
         <BottomDesc position={position}>
             {position ? "Masz Poprawną postawę :D" : "wyprostuj się >;c"}
-            </BottomDesc>
-    </Container>)
+        </BottomDesc>
+    </ContainerBox>)
 
 }
 
-const Container = styled.div`
-
-width:600px;
-
+const ContainerBox = styled.div`
+    margin:auto;
+    width:80%;
 `
 
 
@@ -45,6 +44,7 @@ padding:5px;
 text-align:center;
 /* width:90%; */
 margin:30px;
+font-size:2em;
 
 `
 
