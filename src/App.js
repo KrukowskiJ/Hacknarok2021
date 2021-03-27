@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import TensComp from "./components/aimodel"
 import Nav from "./components/Nav"
@@ -15,6 +14,7 @@ import { Container, Col, Row } from 'reactstrap';
 import Daily from "./components/dailyTasks"
 import Welcome from "./components/Welcome"
 import AboutUs from "./components/AboutUs"
+import MyNotification from "./components/MyNotification";
 
 function App() {
   const [arrayOfNums, changeArrOfNums] = useState([0.1]);
@@ -36,13 +36,18 @@ function App() {
                     <TitleBox>
                       <Title>
                         DANE I WYKRESY
-                        </Title>
+                      </Title>
                     </TitleBox>
                     <Arrow />
                     <MyChart arrayOfNums={arrayOfNums} />
                   </Route>
-                    <Route path="/">
-                      <Welcome />
+                  <Route path="/">
+                    <TitleBox>
+                      <Title>
+                        O APLIKACJI
+                      </Title>
+                    </TitleBox>
+                    <Arrow />
                   </Route>
                 </Switch>
               </GreyBox>
@@ -50,13 +55,15 @@ function App() {
             <Col md="6">
               <MasterBox>
                 <TensComp
-                  alertBadFn={() => changePosistion(false)}
-                  alertGoodFn={() => changePosistion(true)}
-                  changeArray={changeArrOfNums}
-                  arrOfNums={arrayOfNums}
+                    alertBadFn={() => changePosistion(false)}
+                    alertGoodFn={() => changePosistion(true)}
+                    changeArray={changeArrOfNums}
+                    arrOfNums={arrayOfNums}
                 />
                 <CameraComponent position={position} />
                 <Carusel />
+                {console.log("App.js position = " + position)}
+                <MyNotification position={position}/>
               </MasterBox>
             </Col>
           </Row>
