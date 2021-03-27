@@ -114,7 +114,7 @@ function getState() {
             yaxis: [
                 {
                     title: {
-                        text: "Czy byłeś wyprostowany? [%]"
+                        text: "Czy byłeś wyprostowany?"
                     }
                 }
             ],
