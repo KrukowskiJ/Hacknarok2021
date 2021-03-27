@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts";
+import styled from "styled-components"
 
 let data = [];
 let int = 1;
@@ -57,21 +58,45 @@ class MyChart extends React.Component {
 
     render() {
         return (
-            <div id="chart">
+            <>
+            <Title>
+                WYKRES POSTURY
+            </Title>
+
+            <ChartBox>
                 <Chart
                     options={this.state.options}
                     series={this.state.series}
                     type="line"
-                    height="350"
-                    width="500"
+                    height="500px"
+                    width="100%"
+                    margin="0px"
                 />
-            </div>
+            </ChartBox>
+            </>
         );
     }
 }
 
 export default MyChart;
 
+const Title = styled.h3`
+    text-align: left;
+    font: normal normal bold 16px/20px Microsoft YaHei UI;
+    letter-spacing: 0px;
+    color: #676767;
+    opacity: 1; 
+    margin:10%;
+    margin-top:5%;
+    font-size: 2rem;
+    padding-bottom:20px;
+    border-bottom: 4px solid #7C7C7C ;
+`
+
+const ChartBox = styled.div`
+    padding:10%;
+    padding-top:0px;
+`
 
 function getState() {
     return {
@@ -100,8 +125,8 @@ function getState() {
             },
 
             title: {
-                text: "Wykres Twojej postury:",
-                align: "left"
+                align: "left",
+                size: "2px"
             },
             markers: {
                 size: 0
