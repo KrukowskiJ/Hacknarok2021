@@ -11,35 +11,14 @@ import Nav from "./components/Nav"
 import CameraComponent from "./components/CameraComponent"
 import MyChart from "./components/MyChart";
 import Carusel from "./components/Carusel";
-import Notification from "react-notifications/lib/Notification";
-
-
-let notificationLock = false;
-
-function lockNotification() {
-    if (notificationLock) {
-        console.log("WYPROSTUJ SIE");
-        createNotification()
-        notificationLock = false;
-    }
-}
-
-function unlockNotification() {
-    console.log("unlocking notification");
-    notificationLock = true;
-}
-
-function createNotification() {
-    console.log("Clicked?")
-    this.refs.child.getAlert()
-}
+import MyNotification from "./components/MyNotification";
 
 function App() {
 
     const [position, changePosistion] = useState(true);
     const [arrayOfNums, changeArrOfNums] = useState([0.1]);
 
-    this.refs.child.showAlert();
+
 
     return (<>
 
@@ -66,12 +45,11 @@ function App() {
                             alertGoodFn={() => changePosistion(true)}
                             changeArray={changeArrOfNums}
                             arrOfNums={arrayOfNums}
-                            createNotification={() => lockNotification()}
-                            unlockNotification={() => unlockNotification()}
                         />
                         <CameraComponent position={position}/>
                         <Carusel/>
-                        <Notification ref="child"/>
+                        {console.log("App.js", position)}
+                        <MyNotification position={position}/>
                     </SubContainer>
                 </Block>
             </div>

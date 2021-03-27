@@ -6,7 +6,7 @@
 let numOfFrames = 0;
 let numOfGoodFrames = 0;
 let initFlag = false;
-export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums, createNotification, unlockNotification }) => {
+export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums}) => {
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
@@ -76,7 +76,7 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums, createNotific
         else {
             if (typeof alertGoodFn == "function")
                 alertGoodFn();
-                unlockNotification();
+
 
         }
 
@@ -88,7 +88,7 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums, createNotific
         // console.log("bad")
         if (typeof alertBadFn == "function")
             alertBadFn();
-            createNotification();
+
     }
 
 

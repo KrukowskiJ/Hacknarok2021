@@ -1,21 +1,21 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import Notification  from 'react-web-notification';
 
 
-class App extends React.Component {
+let notificationLock = false;
+
+
+export default class MyNotification extends React.Component {
+
+
+
     constructor(props) {
         super(props);
+        this.position = props.position;
         this.state = {
             ignore: true,
             title: ''
         };
-        this.getAlert = this.getAlert.bind(this);
-    }
-
-    getAlert() {
-        alert('clicked');
-        this.showNotification();
     }
 
     handlePermissionGranted(){
@@ -95,9 +95,22 @@ class App extends React.Component {
     }
 
     render() {
+        console.log("Position value: " + this.position + " lock value: " + notificationLock)
+
+        if(this.position && notificationLock){
+          this.showNotification()
+          notificationLock = false;
+          console.log("WYPROSTUJ SIE")
+        }
+
+        // // position is false => we are putting lock up
+        // if(!this.position) {
+        //     notificationLock = true;
+        //     console.log("Changing lock value")
+        // }
+
         return (
             <div>
-                <button onClick={this.handleButtonClick.bind(this)}>Notif!</button>
                 {document.title === 'swExample' && <button onClick={this.handleButtonClick2.bind(this)}>swRegistration.getNotifications</button>}
                 <Notification
                     ignore={this.state.ignore && this.state.title !== ''}
@@ -122,11 +135,3 @@ class App extends React.Component {
         )
     }
 };
-if (document.title === 'swExample') {
-    navigator.serviceWorker.register('sw.js')
-        .then(function(registration) {
-            ReactDom.render(<App swRegistration={registration}/>, document.getElementById('out'));
-        });
-} else {
-    ReactDom.render(<App/>, document.getElementById('out'));
-}
