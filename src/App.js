@@ -10,8 +10,12 @@ import TensComp from "./components/aimodel"
 import Nav from "./components/Nav"
 
 import CameraComponent from "./components/CameraComponent"
+<<<<<<< HEAD
+import Carusel from "./components/Carusel";
+=======
 import MyChart from "./components/MyChart";
 
+>>>>>>> 6dff1e276e562161eb7405e941094ea0950802a0
 
 function App() {
 
@@ -39,7 +43,8 @@ function App() {
                 arrOfNums={arrayOfNums}
               />
               <CameraComponent position={position} />
-              <MyChart arrayOfNums={arrayOfNums} width={}/>
+              <Carusel /> 
+              <MyChart arrayOfNums={arrayOfNums}/>       
             </Route>
           </Switch>
         </Block>
