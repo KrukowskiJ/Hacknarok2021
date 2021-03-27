@@ -10,7 +10,7 @@ import TensComp from "./components/aimodel"
 import Nav from "./components/Nav"
 
 import CameraComponent from "./components/CameraComponent"
-
+import Carusel from "./components/Carusel";
 
 function App() {
 
@@ -35,6 +35,7 @@ function App() {
                 alertGoodFn={() => changePosistion(true)}
               />
               <CameraComponent position={position}/>
+              <Carusel /> 
             </Route>
           </Switch>
         </Block>
