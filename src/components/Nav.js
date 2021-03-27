@@ -8,41 +8,97 @@ import {
 } from "react-router-dom";
 
 
+
 export default () => {
 
+
     return (
-        <><Title />
+        <>
+            <Top><Title ><Text>MENU</Text></Title ><Icon /><Title2 ><Text>Popraw Swoją Postawę</Text></Title2 ></Top>
             <Nav>
-                <ul>
-                    <li>
-                        <Link to="/">Ho3me</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/users">Users</Link>
-                    </li>
-                </ul>
+                <NavLink to="/">WELCOME</NavLink>
+                <NavLink to="/about">ABOUT US</NavLink>
+                <NavLink to="/posture">CHECK YOUR POSTURE</NavLink>
+                <NavLink2 to="/postawa">Wykrywanie Postawy</NavLink2>
+                <NavLink2 to="/postawa">Dane i Wykresy</NavLink2>
+                <NavLink to="/settings">SETTINGS</NavLink>
             </Nav>
         </>
     );
 }
+const Top = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+    `
 const Title = styled.div`
     background: #9DC54A;
-    top:10;
     position: absolute;
-    z-index: 10;
-    height: 10vh;
-    width:20%;
+    height:100px;
+    width:350px;
+    `
+const Text = styled.div`
+    margin-top:20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 45px;
+    `
+const Icon = styled.div`
+font-size: 1.75vmax;
+text-align: center;
+background: #577812;
+color: #FFFFFF;
+position: absolute;
+height:100px;
+width:100px;
+margin-left:350px;
+    `
+
+const Title2 = styled.div`
+    font-size: 1.75vmax;
+    text-align: center;
+    background: #6A980C;
+    color: #FFFFFF;
+    position: absolute;
+    height:100px;
+    width:72vw;
+    margin-left:450px;
     `
 const Nav = styled.div`
-    background: #9DC54A;
-    background: linear-gradient(173deg, rgba(83,9,22,1) 0%, rgba(173,34,33,1) 45%, rgba(254,68,83,1) 100%);
-    top:0;
+margin-top:100px;
+    background: #545454;
     position: absolute;
-    z-index: -1;
-    margin-top: 10vh;
-    height: 90vh;
-    width:20%;
+    height: 100vh;
+    width:350px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
     `
+const NavLink = styled(Link)`
+    padding: 40px;
+    text-align:center;
+      text-decoration: none;
+      color: #9DC54A;
+      display: block;
+      font-size: 20px;
+      font-family: Roboto;
+      :hover{
+          color: white;
+          background-color:#676767;
+      }
+    `
+const NavLink2 = styled(Link)`
+font-family: Roboto;
+display: block;
+    text-align:center;
+  text-decoration: none;
+  background-color: #3A3A3A;
+  color: #9DC54A;
+  font-size: 15px;
+padding: 30px;
+  :hover{
+      color: white;
+      
+  }
+`
