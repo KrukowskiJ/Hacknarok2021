@@ -78,7 +78,7 @@ export default ({ alertBadFn, alertGoodFn }) => {
     }
 
     const alertAbout = () => {
-        console.log("bad")
+        // console.log("bad")
         if (typeof alertBadFn == "function")
             alertBadFn();
 
