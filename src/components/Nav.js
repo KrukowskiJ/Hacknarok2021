@@ -13,6 +13,7 @@ import { Container, Col, Row } from 'reactstrap';
 export default () => {
 
     const [hover, setHover] = useState(0);
+    const [hover1, setHover1] = useState(0);
     const [hover2, setHover2] = useState(0);
     function wypisz() {
 
@@ -23,14 +24,16 @@ export default () => {
         <>
             <Top><Title ><Text>MENU</Text></Title ><Icon /><Text2>Popraw Swoją Postawę</Text2></Top>
             <Nav>
-                <NavLink to="/">WITAJ</NavLink>
-                <NavLink to="/posture">TWOJA POSTAWA</NavLink>
-                <NavLink to="/about">O NAS</NavLink>
-                {/* <Row><NavLink2 onMouseEnter={() => setHover(!hover)}
-                    onMouseLeave={() => setHover(!hover)}
+                <R><NavLink onMouseEnter={() => setHover(1)}
+                    onMouseLeave={() => setHover(0)}
+                    to="/">WITAJ</NavLink>{hover ? <Arrow /> : null}</R>
+                <R><NavLink onMouseEnter={() => setHover1(1)}
+                    onMouseLeave={() => setHover1(0)}
+                    to="/posture">TWOJA POSTAWA</NavLink>{hover1 ? <Arrow /> : null}</R>
+                <R><NavLink onMouseEnter={() => setHover2(1)}
+                    onMouseLeave={() => setHover2(0)}
 
-                    to="/postawa">Wykrywanie Postawy</NavLink2>{hover ? <Arrow /> : null}
-                </Row> */}
+                    to="/about">O NAS</NavLink>{hover2 ? <Arrow /> : null}</R>
             </Nav>
         </>
     );
@@ -42,14 +45,31 @@ width:100%;
 display: flex;
     `
 
+const R = styled.div`
+display: flex;
+align-items:center;
+
+:hover{
+    width: 100%;
+    color: white;
+    background-color:#676767;
+    text-decoration: none;
+    border: 16px solid #9DC54A;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+}
+    `
+
 const Arrow = styled.div`
 float: right;
-width: 0; 
+width: 0px; 
   height: 0; 
+  
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent; 
   
-  border-right:20px solid white; 
+  border-right:20px solid #EBEBEB; 
     `
 const Title = styled.div`
     background: #9DC54A;
@@ -100,29 +120,13 @@ width: 100%;
       display: block;
       font-size: 20px;
       font-family: Roboto;
+
+
       :hover{
-          color: white;
-          background-color:#676767;
-          text-decoration: none;
-          border: 16px solid #9DC54A;
-          border-top: none;
-          border-bottom: none;
-          border-right: none;
-      }
+        width: 100%;
+        color: white;
+        background-color:#676767;
+        text-decoration: none;
+        
+    }
     `
-const NavLink2 = styled(Link)`
-display: flex;
-font-family: Roboto;
-display: block;
-    text-align:center;
-  text-decoration: none;
-  background-color: #3A3A3A;
-  color: #9DC54A;
-  font-size: 15px;
-padding: 30px;
-  :hover{
-    text-decoration: none;
-      color: white;
-      
-  }
-`
