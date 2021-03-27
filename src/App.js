@@ -39,7 +39,7 @@ function App() {
                 arrOfNums={arrayOfNums}
               />
               <CameraComponent position={position} />
-              <MyChart arrayOfNums={arrayOfNums} width={}/>
+              <MyChart arrayOfNums={arrayOfNums}/>
             </Route>
           </Switch>
         </Block>
