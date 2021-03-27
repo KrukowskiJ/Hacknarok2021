@@ -38,9 +38,8 @@ function App() {
                 changeArray={changeArrOfNums}
                 arrOfNums={arrayOfNums}
               />
-              {console.log(arrayOfNums)}
               <CameraComponent position={position} />
-              <MyChart />
+              <MyChart arrayOfNums={arrayOfNums}/>
             </Route>
           </Switch>
         </Block>
