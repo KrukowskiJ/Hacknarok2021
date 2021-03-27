@@ -11,8 +11,8 @@ import Nav from "./components/Nav"
 import CameraComponent from "./components/CameraComponent"
 import MyChart from "./components/MyChart";
 import Carusel from "./components/Carusel";
-import { Container, Col, Row } from 'reactstrap';
-import Daily from "./components/dailyTasks"
+import {Container,Col,Row} from 'reactstrap';
+import AboutUs from "./components/AboutUs"
 
 function App() {
   const [arrayOfNums, changeArrOfNums] = useState([0.1]);
@@ -26,19 +26,26 @@ function App() {
           <Row>
             <Col md="6">
               <GreyBox>
-                <TitleBox>
-                  <Title>
-                    DANE I WYKRESY
-                    </Title>
-
-                </TitleBox>
-                <Arrow />
                 <Switch>
                   <Route path="/about">
-                    <Daily />
+                    <AboutUs />
                   </Route>
                   <Route path="/posture">
+                    <TitleBox>
+                      <Title>
+                        DANE I WYKRESY
+                        </Title>
+                    </TitleBox>
+                    <Arrow />
                     <MyChart arrayOfNums={arrayOfNums} />
+                  </Route>
+                    <Route path="/">
+                      <TitleBox>
+                        <Title>
+                          O APLIKACJI
+                        </Title>
+                      </TitleBox>
+                      <Arrow />
                   </Route>
                 </Switch>
               </GreyBox>

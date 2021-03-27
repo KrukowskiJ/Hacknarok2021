@@ -22,7 +22,13 @@ export default () => {
 
     return (
         <>
-            <Top><Title ><Text>MENU</Text></Title ><Icon /><Text2>Popraw Swoją Postawę</Text2></Top>
+            <Top>
+                <Title>
+                    <Text>MENU</Text>
+                </Title>
+                <Icon />
+                <Text2>Popraw Swoją Postawę</Text2>
+            </Top>
             <Nav>
                 <R><NavLink onMouseEnter={() => setHover(1)}
                     onMouseLeave={() => setHover(0)}
