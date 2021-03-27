@@ -5,6 +5,7 @@
 
 let numOfFrames = 0;
 let numOfGoodFrames = 0;
+let initFlag = false;
 export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
@@ -13,6 +14,8 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
     let model, webcam, ctx, labelContainer, maxPredictions;
 
     async function init() {
+
+        if (initFlag) return;
 
         const URL = "./model/";
         const modelURL = URL + "model.json";
@@ -49,6 +52,7 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
         webcam.update(); // update the webcam frame
         await predict();
         window.requestAnimationFrame(loop);
+        initFlag = true;
     }
 
     async function predict() {
@@ -70,7 +74,8 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
 
         if (prediction[0].probability < 0.8) { alertAbout() }
         else {
-            alertGoodFn();
+            if (typeof alertGoodFn == "function")
+                alertGoodFn();
         }
 
         // finally draw the poses
@@ -94,16 +99,16 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
     }
 
     const calculate = () => {
-        console.log("calculate!")
-        console.log(new Date().getTime())
-        console.log(numOfGoodFrames / numOfFrames)
+        // console.log("calculate!")
+        // console.log(new Date().getTime())
+        // console.log(numOfGoodFrames / numOfFrames)
 
 
         let currentArr = arrOfNums;
 
         currentArr.push(numOfGoodFrames / numOfFrames)
 
-        console.log(currentArr)
+        // console.log(currentArr)
         if (currentArr.length >= 10) {
             currentArr.shift()
         }

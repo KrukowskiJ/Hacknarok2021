@@ -23,31 +23,43 @@ function App() {
       <div>
         <Nav />
         <Block>
-          <Switch>
-            <Route path="/about">
-              {/* <TensComp /> */}
-            </Route>
-            <Route path="/posture">
-              <TensComp />
-            </Route>
-            <Route path="/">
-              <TensComp
-                alertBadFn={() => changePosistion(false)}
-                alertGoodFn={() => changePosistion(true)}
-                changeArray={changeArrOfNums}
-                arrOfNums={arrayOfNums}
-              />
-              <CameraComponent position={position} />
-              <Carusel /> 
-              <MyChart arrayOfNums={arrayOfNums}/>       
-            </Route>
-          </Switch>
+          <SubContainer>
+            <Switch>
+              <Route path="/about">
+                {/* <TensComp /> */}
+              </Route>
+              <Route path="/posture">
+                <TensComp />
+              </Route>
+              <Route path="/">
+                <MyChart arrayOfNums={arrayOfNums} />
+              </Route>
+            </Switch>
+          </SubContainer>
+          <SubContainer>
+            <TensComp
+              alertBadFn={() => changePosistion(false)}
+              alertGoodFn={() => changePosistion(true)}
+              changeArray={changeArrOfNums}
+              arrOfNums={arrayOfNums}
+            />
+            <CameraComponent position={position} />
+            <Carusel />
+          </SubContainer>
         </Block>
       </div>
     </Router>
   </>);
 }
+
+const SubContainer = styled.div`
+width:50%;
+`
+
 const Block = styled.div`
-    margin-left: 30%;
+    margin-left: 360px;
+    margin-top:100px;
+    display:flex;
+
     `
 export default App;
