@@ -8,7 +8,7 @@ export default ({ position }) => {
 
 
     return (<Container >
-        <CamStyled audio={false} width={540} position={position} />
+        <CamStyled audio={false} width={540} positioncolor={position} />
         <BottomDesc position={position}>
             {position ? "Masz Poprawną postawę :D" : "wyprostuj się >;c"}
             </BottomDesc>
@@ -25,8 +25,8 @@ width:600px;
 
 const CamStyled = styled(Webcam)`
 /* display:inline; */
-border:solid 25px ${props => props.position ? '#9DC54A' : '#D9A243'};
-background-color:${props => props.position ? '#9DC54A' : '#D9A243'};
+border:solid 25px ${props => props.positioncolor ? '#9DC54A' : '#D9A243'};
+background-color:${props => props.positioncolor ? '#9DC54A' : '#D9A243'};
 transition: all 0.5s ease-in-out;
 border-radius:30px;
 margin:auto;

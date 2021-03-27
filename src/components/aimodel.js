@@ -5,7 +5,7 @@
 
 let numOfFrames = 0;
 let numOfGoodFrames = 0;
-export default ({ alertBadFn, alertGoodFn }) => {
+export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums }) => {
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
@@ -89,7 +89,7 @@ export default ({ alertBadFn, alertGoodFn }) => {
         numOfFrames++
         if (isStriaight)
             numOfGoodFrames++
-        if (numOfFrames == (500 / 24))
+        if (numOfFrames == 100)
             calculate()
     }
 
@@ -97,6 +97,17 @@ export default ({ alertBadFn, alertGoodFn }) => {
         console.log("calculate!")
         console.log(new Date().getTime())
         console.log(numOfGoodFrames / numOfFrames)
+
+
+        let currentArr = arrOfNums;
+
+        currentArr.push(numOfGoodFrames / numOfFrames)
+
+        console.log(currentArr)
+        if (currentArr.length >= 10) {
+            currentArr.shift()
+        }
+        changeArray(currentArr);
 
         numOfFrames = 0;
         numOfGoodFrames = 0;

@@ -16,6 +16,7 @@ import MyChart from "./components/MyChart";
 function App() {
 
   const [position, changePosistion] = useState(true);
+  const [arrayOfNums, changeArrOfNums] = useState([0.1]);
 
   return (<>
 
@@ -34,9 +35,11 @@ function App() {
               <TensComp
                 alertBadFn={() => changePosistion(false)}
                 alertGoodFn={() => changePosistion(true)}
+                changeArray={changeArrOfNums}
+                arrOfNums={arrayOfNums}
               />
-              <CameraComponent position={position}/>
-              <MyChart/>
+              <CameraComponent position={position} />
+              <MyChart arrayOfNums={arrayOfNums}/>
             </Route>
           </Switch>
         </Block>
