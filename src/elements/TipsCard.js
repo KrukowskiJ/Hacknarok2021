@@ -46,7 +46,7 @@ export default (props)=>{
     return(
         <Container>
             <Title>
-                ZADBAJ O USTAWIENIE EKRANU:
+                {props.title}
             </Title>
             <Box>
                 {props.text.map(tip=>{
