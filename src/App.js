@@ -11,7 +11,7 @@ import Nav from "./components/Nav"
 import CameraComponent from "./components/CameraComponent"
 import MyChart from "./components/MyChart";
 import Carusel from "./components/Carusel";
-import {Container,Col,Row} from 'reactstrap';
+import { Container, Col, Row } from 'reactstrap';
 import Daily from "./components/dailyTasks"
 
 function App() {
@@ -20,40 +20,42 @@ function App() {
 
   return (<>
     <Router>
-      <Container fluid style={{margin:0, padding:0}} >
+      <Container fluid style={{ margin: 0, padding: 0 }} >
         <Nav />
         <Block>
           <Row>
-              <Col md="6">
-                <GreyBox>
-                  <TitleBox>
-                    <Title>
-                       DANE I WYKRESY
+            <Col md="6">
+              <GreyBox>
+                <TitleBox>
+                  <Title>
+                    DANE I WYKRESY
                     </Title>
-                  </TitleBox>
-                  <Switch>
-                    <Route path="/about">
-                      <Daily />
-                    </Route>
-                    <Route path="/posture">
-                      <MyChart arrayOfNums={arrayOfNums}/>  
-                    </Route>
-                  </Switch>
-                </GreyBox>
-              </Col>
-              <Col md="6">
-                <MasterBox>
-                  <TensComp
-                      alertBadFn={() => changePosistion(false)}
-                      alertGoodFn={() => changePosistion(true)}
-                      changeArray={changeArrOfNums}
-                      arrOfNums={arrayOfNums}
-                  />
-                  <CameraComponent position={position} />
-                  <Carusel />  
-                </MasterBox>
-              </Col>
-            </Row>
+
+                </TitleBox>
+                <Arrow />
+                <Switch>
+                  <Route path="/about">
+                    <Daily />
+                  </Route>
+                  <Route path="/posture">
+                    <MyChart arrayOfNums={arrayOfNums} />
+                  </Route>
+                </Switch>
+              </GreyBox>
+            </Col>
+            <Col md="6">
+              <MasterBox>
+                <TensComp
+                  alertBadFn={() => changePosistion(false)}
+                  alertGoodFn={() => changePosistion(true)}
+                  changeArray={changeArrOfNums}
+                  arrOfNums={arrayOfNums}
+                />
+                <CameraComponent position={position} />
+                <Carusel />
+              </MasterBox>
+            </Col>
+          </Row>
         </Block>
 
       </Container>
@@ -65,12 +67,22 @@ const SubContainer = styled.div`
 width:50%;
 `
 
-const TitleBox=styled.div`
+const Arrow = styled.div`
+float: right;
+margin-right: 20px;
+width: 0; 
+  height: 0; 
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  border-top: 17px solid #C5C5C5;
+`
+
+const TitleBox = styled.div`
   background:#C5C5C5;
   padding:15px;
 `
 
-const Title=styled.h4`
+const Title = styled.h4`
   text-align: left;
   font: normal normal bold 19px/24px Microsoft YaHei UI;
   letter-spacing: 0px;
@@ -90,7 +102,7 @@ const GreyBox = styled.div`
     margin:0;
 `
 
-const MasterBox=styled.div`
+const MasterBox = styled.div`
     margin-top:10%;
 
 `
