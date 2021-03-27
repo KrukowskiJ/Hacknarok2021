@@ -58,6 +58,11 @@ class MyChart extends React.Component {
 
     render() {
         return (
+            <>
+            <Title>
+                WYKRES POSTURY
+            </Title>
+
             <ChartBox>
                 <Chart
                     options={this.state.options}
@@ -68,14 +73,29 @@ class MyChart extends React.Component {
                     margin="0px"
                 />
             </ChartBox>
+            </>
         );
     }
 }
 
 export default MyChart;
 
+const Title = styled.h3`
+    text-align: left;
+    font: normal normal bold 16px/20px Microsoft YaHei UI;
+    letter-spacing: 0px;
+    color: #676767;
+    opacity: 1; 
+    margin:10%;
+    margin-top:5%;
+    font-size: 2rem;
+    padding-bottom:20px;
+    border-bottom: 4px solid #7C7C7C ;
+`
+
 const ChartBox = styled.div`
     padding:10%;
+    padding-top:0px;
 `
 
 function getState() {
@@ -105,8 +125,8 @@ function getState() {
             },
 
             title: {
-                text: "Wykres Twojej postury:",
-                align: "left"
+                align: "left",
+                size: "2px"
             },
             markers: {
                 size: 0

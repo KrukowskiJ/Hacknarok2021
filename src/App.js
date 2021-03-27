@@ -26,6 +26,11 @@ function App() {
           <Row>
               <Col md="6">
                 <GreyBox>
+                  <TitleBox>
+                    <Title>
+                       DANE I WYKRESY
+                    </Title>
+                  </TitleBox>
                   <Switch>
                     <Route path="/about">
                       {/* <TensComp /> */}
@@ -59,6 +64,20 @@ function App() {
 
 const SubContainer = styled.div`
 width:50%;
+`
+
+const TitleBox=styled.div`
+  background:#C5C5C5;
+  padding:15px;
+`
+
+const Title=styled.h4`
+  text-align: left;
+  font: normal normal bold 19px/24px Microsoft YaHei UI;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+  margin:0px;
 `
 
 const Block = styled.div`
