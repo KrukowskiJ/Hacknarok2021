@@ -12,7 +12,7 @@ import CameraComponent from "./components/CameraComponent"
 import MyChart from "./components/MyChart";
 import Carusel from "./components/Carusel";
 import {Container,Col,Row} from 'reactstrap';
-import Daily from "./components/dailyTasks"
+import AboutUs from "./components/AboutUs"
 
 function App() {
   const [arrayOfNums, changeArrOfNums] = useState([0.1]);
@@ -33,7 +33,7 @@ function App() {
                   </TitleBox>
                   <Switch>
                     <Route path="/about">
-                      <Daily />
+                      <AboutUs />
                     </Route>
                     <Route path="/posture">
                       <MyChart arrayOfNums={arrayOfNums}/>  
