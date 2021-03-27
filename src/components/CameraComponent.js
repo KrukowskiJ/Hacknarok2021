@@ -11,14 +11,14 @@ export default ({ position }) => {
         <CamStyled audio={false} width={540} positioncolor={position} />
         <BottomDesc position={position}>
             {position ? "Masz Poprawną postawę :D" : "wyprostuj się >;c"}
-            </BottomDesc>
+        </BottomDesc>
     </ContainerBox>)
 
 }
 
 const ContainerBox = styled.div`
     margin:auto;
-    width:600px;
+    width:80%;
 `
 
 

@@ -12,6 +12,7 @@ import CameraComponent from "./components/CameraComponent"
 import MyChart from "./components/MyChart";
 import Carusel from "./components/Carusel";
 import {Container,Col,Row} from 'reactstrap';
+import Daily from "./components/dailyTasks"
 
 function App() {
   const [arrayOfNums, changeArrOfNums] = useState([0.1]);
@@ -28,10 +29,9 @@ function App() {
                 <GreyBox>
                   <Switch>
                     <Route path="/about">
-                      {/* <TensComp /> */}
+                      <Daily />
                     </Route>
                     <Route path="/posture">
-                      <TensComp />
                       <MyChart arrayOfNums={arrayOfNums}/>  
                     </Route>
                   </Switch>
