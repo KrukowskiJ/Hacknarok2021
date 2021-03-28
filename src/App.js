@@ -21,7 +21,7 @@ function App() {
   const [position, changePosistion] = useState(true);
 
   return (<>
-    <Router>
+    <Router basename="demo">
       <Container fluid style={{ margin: 0, padding: 0 }} >
         <Nav />
         <Block>
@@ -35,7 +35,7 @@ function App() {
                   <Route path="/posture">
                     <TitleBox>
                       <Title>
-                        DANE I WYKReeeESY
+                        DANE I WYKRESY
                       </Title>
                     </TitleBox>
                     <Arrow />
