@@ -35,7 +35,7 @@ function App() {
                   <Route path="/posture">
                     <TitleBox>
                       <Title>
-                        DANE I WYKReeeESY
+                        DANE I WYKRESY
                       </Title>
                     </TitleBox>
                     <Arrow />
