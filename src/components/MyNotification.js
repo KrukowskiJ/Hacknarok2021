@@ -1,6 +1,6 @@
 import React from 'react';
 
-import sound from "../sound/example_sound.mp3"
+import sound from "../sound/wyprostuj.mp3"
 
 let notificationLock = false;
 

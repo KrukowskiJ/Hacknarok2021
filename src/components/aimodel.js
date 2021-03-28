@@ -17,6 +17,7 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums}) => {
 
         if (initFlag) return;
 
+        // nie działa
         const URL = "./model/";
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
