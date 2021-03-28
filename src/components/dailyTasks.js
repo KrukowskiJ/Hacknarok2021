@@ -18,7 +18,7 @@ export default () => {
         <Task done={done[1]} onClick={() => setDone({ ...done, 1: !done[1] })}>
             <OkImg src={OK} />
             <TaskText>
-                A teraz zrób 100 pompek  
+                Zrób 100 pompek  
             </TaskText>
         </Task>
 

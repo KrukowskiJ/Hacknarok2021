@@ -17,7 +17,7 @@ export default ({ alertBadFn, alertGoodFn, changeArray, arrOfNums}) => {
 
         if (initFlag) return;
 
-        const URL = "./model/";
+        const URL = "https://www.codehussar.pl/demo/model/";
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
