@@ -7,6 +7,7 @@ import {
     Link
 } from "react-router-dom";
 import { Container, Col, Row } from 'reactstrap';
+import logo from '../images/menu.svg'
 
 
 
@@ -26,7 +27,7 @@ export default () => {
                 <Title>
                     <Text>MENU</Text>
                 </Title>
-                <Icon />
+                <Icon ><Image src={logo} /></Icon>
                 <Text2>Popraw Swoją Postawę</Text2>
             </Top>
             <Nav>
@@ -49,6 +50,8 @@ background: #6A980C;
 height:100px;
 width:100%;
 display: flex;
+    `
+const Image = styled.img`
     `
 
 const R = styled.div`

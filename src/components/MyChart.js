@@ -69,7 +69,7 @@ class MyChart extends React.Component {
                             options={this.state.options}
                             series={this.state.series}
                             type="line"
-                            height="500px"
+                            height="300px"
                             width="100%"
                             margin="0px"
                         />

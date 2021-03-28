@@ -40,6 +40,7 @@ function App() {
                     </TitleBox>
                     <Arrow />
                     <MyChart arrayOfNums={arrayOfNums} />
+                    <Daily />
                   </Route>
                   <Route path="/">
                     <Welcome />
