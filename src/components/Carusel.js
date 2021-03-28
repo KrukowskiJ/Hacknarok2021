@@ -26,23 +26,14 @@ export default () => {
             ]
         },
         {
-            title: "",
+            title: "ZADABAJ O POSTAWĘ",
             tips: [
-                "Nie stawiaj monitora naprzeciw okna, ani na jego tle",
-                "Monitor powinien stać bokiem do okna, nie bliżej niż 1 metr",
-                "Jeżeli masz duże nasłonecznienie pomieszczenia stosuj żaluzje",
-                "Tło za monitorem nie powinno być ani za jasne ani nie za ciemne (powieś plakat)"
+                "Kup wygodne ergonomiczne krzesło",
+                "Zaopatrz się w podstawkę do nóg",
+                "Kontroluj swoje ciało i kręgosłup",
+                "Przerwy spędzaj aktywnie"
             ]
-        },
-        {
-            title: "1231ZADBAJ O USTAWIENIE EKRANU:",
-            tips: [
-                "Nie stawiaj monitora naprzeciw okna, ani na jego tle",
-                "Monitor powinien stać bokiem do okna, nie bliżej niż 1 metr",
-                "Jeżeli masz duże nasłonecznienie pomieszczenia stosuj żaluzje",
-                "Tło za monitorem nie powinno być ani za jasne ani nie za ciemne (powieś plakat)"
-            ]
-        },
+        }
     ]
 
 
