@@ -24,9 +24,6 @@ export default () => {
                         Jesteśmy grupą studentów która wspólnie jeździ na hackathony. Dziś tworzymy projekt który pomoże tobie za pomocą AI zachować dobrą podstawę przy komputerze!
                     </p>
                     <p>
-                        Spotkaliśmy się na malowniczej plaży. Byliśmy razem na kilku hackathonach co było dla nas super doświadczeniem!
-                    </p>
-                    <p>
                         Odwiedź nas na naszej stronie!
                     </p>
 
@@ -51,7 +48,7 @@ const StyledLink = styled.a`
 
 
 const StyledImg = styled.img`
-  margin-top:10%;   
+  margin-top:10%;  
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -99,6 +96,7 @@ const Title = styled.h4`
   color: #FFFFFF;
   opacity: 1;
   margin:0px;
+
 `
 
 const TitleTop = styled.h2`
@@ -109,6 +107,7 @@ const TitleTop = styled.h2`
     opacity: 1;
     margin:0;
     padding:10px;
+    font-size:1.5vw;
 `
 
 const DescriptionValue = styled.h2`
@@ -117,4 +116,5 @@ const DescriptionValue = styled.h2`
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
+    font-size:1vw;
 `

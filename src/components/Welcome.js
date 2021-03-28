@@ -119,6 +119,7 @@ const TitleTop = styled.h2`
     opacity: 1;
     margin:0;
     padding:10px;
+    font-size:1.5vw;
 `
 
 const DescriptionValue=styled.h2`
@@ -127,6 +128,7 @@ const DescriptionValue=styled.h2`
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
+    font-size:1vw;
 `
 
 const BulletBox=styled.div`
@@ -144,5 +146,5 @@ const BulletText=styled.h2`
     color: #FFFFFF;
     opacity: 1;
     margin:5px;
-    font-size:1.8rem;
+    font-size:1vw;
 `

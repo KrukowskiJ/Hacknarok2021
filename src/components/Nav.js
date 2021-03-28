@@ -51,7 +51,7 @@ export default () => {
 const LogoBox = styled.div`
     margin:20px;
     margin-left: auto; 
-margin-right: 0;
+    margin-right: 0;
 `
 
 const LogoImg = styled.img`
