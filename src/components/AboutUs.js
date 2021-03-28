@@ -24,7 +24,7 @@ export default () => {
                         Jesteśmy grupą studentów która wspólnie jeździ na hackathony. Dziś tworzymy projekt który pomoże tobie za pomocą AI zachować dobrą podstawę przy komputerze!
                     </p>
                     <p>
-                        Spotkaliśmy się na Wojskowej Akademii Technicznej. Byliśmy razem na kilku hackathonach co było dla nas super doświadczeniem!
+                        Spotkaliśmy się na malowniczej plaży. Byliśmy razem na kilku hackathonach co było dla nas super doświadczeniem!
                     </p>
                     <p>
                         Odwiedź nas na naszej stronie!
@@ -111,7 +111,7 @@ const TitleTop = styled.h2`
     padding:10px;
 `
 
-const DescriptionValue=styled.h2`
+const DescriptionValue = styled.h2`
     text-align: left;
     font: normal normal bold 26px/34px Roboto;
     letter-spacing: 0px;

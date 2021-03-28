@@ -104,7 +104,8 @@ const Block = styled.div`
 
 const GreyBox = styled.div`
     background: #EBEBEB ;
-    height:100vh;
+    min-height:100vh;
+    height:100%;
     width:100%;
     margin:0;
 `

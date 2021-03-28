@@ -7,8 +7,8 @@ import {
     Link
 } from "react-router-dom";
 import { Container, Col, Row } from 'reactstrap';
-import logo from '../images/menu.svg'
-
+import Menu from '../images/menu.svg'
+import Logo from '../img/logo_white.png'
 
 
 export default () => {
@@ -27,8 +27,11 @@ export default () => {
                 <Title>
                     <Text>MENU</Text>
                 </Title>
-                <Icon ><Image src={logo} /></Icon>
-                <Text2>Popraw Swoją Postawę</Text2>
+                <Icon ><Image src={Menu} /></Icon>
+                <LogoBox>
+                     <LogoImg src={Logo} />
+                </LogoBox>
+
             </Top>
             <Nav>
                 <R><NavLink onMouseEnter={() => setHover(1)}
@@ -45,6 +48,18 @@ export default () => {
         </>
     );
 }
+const LogoBox = styled.div`
+    margin:20px;
+    margin-left: auto; 
+margin-right: 0;
+`
+
+const LogoImg = styled.img`
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;
+`
+
 const Top = styled.div`
 background: #6A980C;
 height:100px;
@@ -114,7 +129,8 @@ margin-left:350px;
 const Nav = styled.div`
     background: #545454;
     position: absolute;
-    height: 100vh;
+    min-height:100vh;
+    height:100%;
     width:350px;
     display: flex;
     justify-content: flex-start;
