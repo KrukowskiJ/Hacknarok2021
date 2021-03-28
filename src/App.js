@@ -45,7 +45,7 @@ function App() {
                     <TitleBox>
                       <Title>
                         O APLIKACJI
-                        </Title>
+                      </Title>
                     </TitleBox>
                     <Arrow />
                   </Route>
