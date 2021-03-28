@@ -30,19 +30,19 @@ function App() {
               <GreyBox>
                 <Switch>
                   <Route path="/about">
-                    <AboutUs/>
+                    <AboutUs />
                   </Route>
                   <Route path="/posture">
                     <TitleBox>
                       <Title>
-                        DANE I WYKRESY
+                        DANE I WYKReeeESY
                       </Title>
                     </TitleBox>
                     <Arrow />
                     <MyChart arrayOfNums={arrayOfNums} />
                   </Route>
                   <Route path="/">
-                    <Welcome/>
+                    <Welcome />
                   </Route>
                 </Switch>
               </GreyBox>
@@ -50,15 +50,15 @@ function App() {
             <Col md="6">
               <MasterBox>
                 <TensComp
-                    alertBadFn={() => changePosistion(false)}
-                    alertGoodFn={() => changePosistion(true)}
-                    changeArray={changeArrOfNums}
-                    arrOfNums={arrayOfNums}
+                  alertBadFn={() => changePosistion(false)}
+                  alertGoodFn={() => changePosistion(true)}
+                  changeArray={changeArrOfNums}
+                  arrOfNums={arrayOfNums}
                 />
                 <CameraComponent position={position} />
                 <Carusel />
                 {console.log("App.js position = " + position)}
-                <MyNotification position={position}/>
+                <MyNotification position={position} />
               </MasterBox>
             </Col>
           </Row>
