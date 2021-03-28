@@ -34,20 +34,15 @@ function App() {
                   <Route path="/posture">
                     <TitleBox>
                       <Title>
-                        DANE I WYKRESY
-                        </Title>
+                        DANE I WYKReeeESY
+                      </Title>
                     </TitleBox>
                     <Arrow />
                     <MyChart arrayOfNums={arrayOfNums} />
                     <Daily></Daily>
                   </Route>
                   <Route path="/">
-                    <TitleBox>
-                      <Title>
-                        O APLIKACJI
-                      </Title>
-                    </TitleBox>
-                    <Arrow />
+                    <Welcome />
                   </Route>
                 </Switch>
               </GreyBox>
@@ -62,6 +57,8 @@ function App() {
                 />
                 <CameraComponent position={position} />
                 <Carusel />
+                {console.log("App.js position = " + position)}
+                <MyNotification position={position} />
               </MasterBox>
             </Col>
           </Row>
