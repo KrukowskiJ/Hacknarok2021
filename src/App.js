@@ -21,7 +21,7 @@ function App() {
   const [position, changePosistion] = useState(true);
 
   return (<>
-    <Router>
+    <Router basename="demo">
       <Container fluid style={{ margin: 0, padding: 0 }} >
         <Nav />
         <Block>
