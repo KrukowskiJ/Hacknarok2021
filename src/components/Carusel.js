@@ -17,16 +17,16 @@ export default () => {
             ]
         },
         {
-            title: "12ZADBAJ O USTAWIENIE EKRANU:",
+            title: "ZWIĘKSZ EFEKTYWNOŚĆ PRACY:",
             tips: [
-                "Nie stawiaj monitora naprzeciw okna, ani na jego tle",
-                "Monitor powinien stać bokiem do okna, nie bliżej niż 1 metr",
-                "Jeżeli masz duże nasłonecznienie pomieszczenia stosuj żaluzje",
-                "Tło za monitorem nie powinno być ani za jasne ani nie za ciemne (powieś plakat)"
+                "Używaj techniki Pomodoro",
+                "Rób sesje pracy po 25 minut",
+                "Odpocznij aktywnie przez 5 minut",
+                "Pamiętaj o ruchu oraz gimnastyce"
             ]
         },
         {
-            title: "3213ZADBAJ O USTAWIENIE EKRANU:",
+            title: "",
             tips: [
                 "Nie stawiaj monitora naprzeciw okna, ani na jego tle",
                 "Monitor powinien stać bokiem do okna, nie bliżej niż 1 metr",

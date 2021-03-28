@@ -69,13 +69,12 @@ class MyChart extends React.Component {
                             options={this.state.options}
                             series={this.state.series}
                             type="line"
-                            height="300px"
+                            height="500px"
                             width="100%"
                             margin="0px"
                         />
                     </class>
                 </ChartBox>
-
             </>
         );
     }
