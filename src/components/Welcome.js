@@ -120,6 +120,7 @@ const TitleTop = styled.h2`
     margin:0;
     padding:10px;
     font-size:1.5vw;
+    font-family: Roboto;
 `
 
 const DescriptionValue=styled.h2`
@@ -129,6 +130,7 @@ const DescriptionValue=styled.h2`
     color: #FFFFFF;
     opacity: 1;
     font-size:1vw;
+    font-family: Roboto;
 `
 
 const BulletBox=styled.div`

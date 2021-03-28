@@ -96,6 +96,7 @@ const Title = styled.h4`
   color: #FFFFFF;
   opacity: 1;
   margin:0px;
+  font-family: Roboto;
 
 `
 
@@ -108,6 +109,7 @@ const TitleTop = styled.h2`
     margin:0;
     padding:10px;
     font-size:1.5vw;
+    font-family: Roboto;
 `
 
 const DescriptionValue = styled.h2`
@@ -117,4 +119,5 @@ const DescriptionValue = styled.h2`
     color: #FFFFFF;
     opacity: 1;
     font-size:1vw;
+    font-family: Roboto;
 `

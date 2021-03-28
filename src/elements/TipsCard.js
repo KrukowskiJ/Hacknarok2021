@@ -38,6 +38,7 @@ padding:20px;
 const Text = styled.h1`
 text-align: left;
 font: normal normal bold 19px/24px Microsoft YaHei UI;
+font-family: Roboto;
 letter-spacing: 0px;
 margin:auto;
 color: #8D8D8D;
@@ -55,6 +56,7 @@ margin:auto;
 color: #8D8D8D;
 opacity: 1;
 margin-bottom:10px;
+font-family: Roboto;
 `
 
 const Bullet = styled.img`
