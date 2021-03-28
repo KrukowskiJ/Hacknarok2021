@@ -24,7 +24,7 @@ export default () => {
                         Jesteśmy grupą studentów która wspólnie jeździ na hackathony. Dziś tworzymy projekt który pomoże tobie za pomocą AI zachować dobrą podstawę przy komputerze!
                     </p>
                     <p>
-                        Odwiedź nas na naszej stronie!
+                        Odwiedź nas na naszej stronie:
                     </p>
 
                     <StyledLink href="https://codehussar.pl/" target="_blank">www.codehussar.pl/</StyledLink>
